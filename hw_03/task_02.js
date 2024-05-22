@@ -36,15 +36,15 @@ let c=-5
 let discriminant = Math.pow(b,2) - 4 * a * c
 
 if (discriminant < 0) {
-    console.log('у уровнения нет корней')
+    console.log('у уравнения нет корней')
 
 }
 else if (discriminant == 0)
-    {console.log('У уровнения один корень: ' + (-b / (2 * a)))
+    {console.log('У уравнения один корень: ' + (-b / (2 * a)))
     
 }
 
 else
-    {console.log('У уровнения два корня: ' + ((-b + Math.sqrt(discriminant)) / (2 * a)) + ' и ' + ((-b - Math.sqrt(discriminant)) / (2 * a)))
+    {console.log('У уравнения два корня: ' + ((-b + Math.sqrt(discriminant)) / (2 * a)) + ' и ' + ((-b - Math.sqrt(discriminant)) / (2 * a)))
 
 }
