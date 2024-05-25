@@ -2,5 +2,5 @@
 // и выводит сумму равную n + nn + nnn, где n не перемножаются, а конкатенируются
 
 const n = 2
-sum = n + Number(String(n)+n) + Number(String(n)+n+n)
+const sum = n + Number(String(n)+n) + Number(String(n)+n+n)
 console.log(sum)
