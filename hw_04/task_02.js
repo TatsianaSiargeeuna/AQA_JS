@@ -65,21 +65,24 @@ else if (checkAge >= age_2) {
 const age_1 = 18
 const age_2 = 60
 
-const checkAge = 19
+const checkAge = -2
+const checkAgeString = String(checkAge);                   // имитирую работу prompt, так как не все значения диапазона можно проверить c выводом результата в консоль без перевода в строку
+const checkAgeStringTrimmed = checkAgeString.trim();
 
-if (isNaN(checkAge) || checkAge < 0 || checkAge > 120 || checkAge == " " || checkAge == null) {
+if (isNaN(checkAgeStringTrimmed) || checkAgeStringTrimmed < 0 || checkAgeStringTrimmed > 120 || checkAgeStringTrimmed == "") {
+    +checkAgeStringTrimmed
     console.log('Error. Wrong data type.');
 }
 
-else if (+checkAge < age_1) {
-    console.log('You don’t have access cause your age is ' + checkAge + '. It’s less then ' + age_1 + '.');
+else if (checkAgeStringTrimmed < age_1) {
+    console.log('You don’t have access cause your age is ' + checkAgeStringTrimmed + '. It’s less then ' + age_1 + '.');
 }
 
-else if (+checkAge >= age_1 && checkAge < age_2) {
+else if (checkAgeStringTrimmed >= age_1 && checkAgeStringTrimmed < age_2) {
     console.log('Welcome!');
 }
 
-else if (+checkAge >= age_2) {
+else if (checkAgeStringTrimmed >= age_2) {
     console.log('Keep calm and look culture channel.');
 
 }
