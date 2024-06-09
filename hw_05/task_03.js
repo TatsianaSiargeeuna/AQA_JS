@@ -3,13 +3,13 @@
 //   Ответ должен выводиться шаблонным литералом вида word contains x vowels and y consonants
 
 
-const word = 'cream';
+const word = 'Cream';
 const vowels  = ['a', 'e', 'i', 'o', 'u'];
 const consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'y', 'z']
 
 let vowelsCounter = 0;
 let consonantsCounter = 0;
-const splitedWord = word.split('');
+const splitedWord = word.toLowerCase().split('');
 
 for (let i=0; i < splitedWord.length; i++) {
     const forIncludes = splitedWord[i]
