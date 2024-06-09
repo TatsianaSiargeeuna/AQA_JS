@@ -12,8 +12,14 @@ let consonantsCounter = 0;
 const splitedWord = word.split('');
 
 for (let i=0; i < splitedWord.length; i++) {
-    if (vowels.includes[i]){
-        vowelsCounter++;}
+    const forIncludes = splitedWord[i]
+    if (vowels.includes(forIncludes)){
+        vowelsCounter++;
+    } else if (consonants.includes(forIncludes)) {
+        consonantsCounter++;
+
+    }
+}
 
 console.log(`Word contains ${vowelsCounter} vowels and ${consonantsCounter} consonants.`);
 

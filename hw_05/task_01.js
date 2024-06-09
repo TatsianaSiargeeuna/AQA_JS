@@ -19,22 +19,24 @@ for ( let i = 10; i>= 0; i--) {
 //   Также реализовать циклом while. Рекоммендация: попробуйте метод .repeat().
 
 
-let smile = '';
+const smile = ':)';
+let result = '';
 
 for (let i = 0; i < 5; i++) {
-    smile = smile + ':)';
-    console.log(smile);
+    result = result + smile;
+    console.log(result);
 }
 
 
 
 
-let smile = '';
+const smile = ':)';
+let result = '';
 let i = 0;
 
 while (i < 5){
-    smile = smile + ':)';
-    console.log(smile);
+    result = result + smile;
+    console.log(result);
     i++;
 }
 
