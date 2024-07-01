@@ -2,15 +2,16 @@
 //   и возвращать только те, которых нет у конкурента (тоже массив). Если все ваши пиццы есть у конкурента - вернуть null
 
 
-const competitorPizzas = ['Pepperoni', 'Capricciosa', 'Diavola', '4 formaggi', 'Hawai'];
+const competitorPizzas = ['Pepperoni', 'Capricciosa', 'diavola', '4 formaggi', 'Hawai'];
 
-function comparePizzas (arrayPizzas) {
+function comparePizzas (arrayOfPizzas) {
     
     const comparasionResult = [];
-
-    for (let i = 0; i < arrayPizzas.length; i++) {
-           if (!competitorPizzas.includes(arrayPizzas[i])) {
-               comparasionResult.push(arrayPizzas[i]);
+    const competitorPizzasToLowerCase = competitorPizzas.map(element => element.toLowerCase());
+    
+    for (let i = 0; i < arrayOfPizzas.length; i++) {
+           if (!competitorPizzasToLowerCase.includes(arrayOfPizzas[i].toLowerCase())) {
+               comparasionResult.push(arrayOfPizzas[i]);
         }
     }
 
@@ -22,7 +23,7 @@ function comparePizzas (arrayPizzas) {
     
 }
 
-console.log(comparePizzas(['Pepperoni', 'Siciliana', '4 stagioni', 'Romana', 'Diavola']))
+console.log(comparePizzas(['Pepperoni', 'siciliana', '4 stagioni', 'Romana', 'Diavola']))
 
   
 
@@ -80,21 +81,18 @@ console.log(eliminatesDuplicates([2, 18, 9, 46, 9, 42, 42, 102, 9]))
 
 // 4. Написать функцию, которая принимает на вход слово и проверяет, является ли это слово палиндромом.
 
+
 function isPalindrome(word) {
     
     let reverseWord = '';
     for (i = word.length - 1; i >= 0; i--){
         reverseWord = reverseWord + word[i];
     } 
-    
-    if (word.toLowerCase() === reverseWord.toLowerCase()){
-        return(word + ' is a palindrome');
-    }else{
-        return(word + ' is not a palindrome');
-    }
-
+ 
+    return word.toLowerCase() === reverseWord.toLowerCase()
 }
 
-console.log(isPalindrome("alla"));
-console.log(isPalindrome("Alla"));
-console.log(isPalindrome("al12la"));
+isPalindrome("alla") === true ? console.log('It is a palindrome') : console.log('It is not palindrome');
+isPalindrome("Alla") === true ? console.log('It is a palindrome') : console.log('It is not palindrome');
+isPalindrome("al12la") === true ? console.log('It is a palindrome') : console.log('It is not palindrome');
+
