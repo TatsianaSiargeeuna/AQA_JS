@@ -7,90 +7,90 @@ export{}
 //   Функция должна принимать union type между IEmployee и ItEmployee, и через тайпгвард определять что за объект и как работать с ним 
 
 
-// type Grade =  'junior' | 'middle' | 'senior' | 'lead';
+type Grade =  'junior' | 'middle' | 'senior' | 'lead';
 
-// enum OCCUPATION {
-//     DEVELOPER = 'Developer',
-//     QA = 'QA',
-//     AQA = 'AQA',
-//     BA = 'BA',
-//     PM = 'PM',
-// }
+enum OCCUPATION {
+    DEVELOPER = 'Developer',
+    QA = 'QA',
+    AQA = 'AQA',
+    BA = 'BA',
+    PM = 'PM',
+}
 
-// interface IAdress {
-//     country: string;
-//     street: string
-//     house: number;
-//     flat: number;
-// }
+interface IAdress {
+    country: string;
+    street: string
+    house: number;
+    flat: number;
+}
 
-// interface ItEmployee {
-//     name: string;
-//     surname: string;
-//     readonly salary: number;
-//     grade: Grade;
-//     occupation: OCCUPATION;
-//     adress?: IAdress;
-//     projectNames: string[];
-// }
+interface ItEmployee {
+    name: string;
+    surname: string;
+    readonly salary: number;
+    grade: Grade;
+    occupation: OCCUPATION;
+    adress?: IAdress;
+    projectNames: string[];
+}
 
-// interface IEmployee {
-//     name: string;
-//     surname: string;
-//     readonly salary: number;
-//     adress?: IAdress;
-// }
-
-
-// const employee_1: ItEmployee = {
-//     name: 'Ivan',
-//     surname: 'Ivanov',
-//     salary: 2100,
-//     grade: 'middle',
-//     occupation: OCCUPATION.BA,
-//     projectNames: ['Project_1', 'Project_2', 'Project_3'],
-//     adress: {
-//         country: 'Belarus',
-//         street: 'Minskaya',
-//         house: 19,
-//         flat: 29
-//     },
-// };
+interface IEmployee {
+    name: string;
+    surname: string;
+    readonly salary: number;
+    adress?: IAdress;
+}
 
 
-// const employee_2: IEmployee = {
-//     name: 'Petr',
-//     surname: 'Petrov',
-//     salary: 1900,
-//     adress: {
-//         country: 'Belarus',
-//         street: 'Vitebskaya',
-//         house: 49,
-//         flat: 12
-//     },
-// };
-
-// // Type Guard:
-// function isItEmployee (object: ItEmployee | IEmployee): object is ItEmployee {
-//     return 'projectNames' in object
-// };
+const employee_1: ItEmployee = {
+    name: 'Ivan',
+    surname: 'Ivanov',
+    salary: 2100,
+    grade: 'middle',
+    occupation: OCCUPATION.BA,
+    projectNames: ['Project_1', 'Project_2', 'Project_3'],
+    adress: {
+        country: 'Belarus',
+        street: 'Minskaya',
+        house: 19,
+        flat: 29
+    },
+};
 
 
-// function printEmployeeInfo(employee: ItEmployee | IEmployee) {
+const employee_2: IEmployee = {
+    name: 'Petr',
+    surname: 'Petrov',
+    salary: 1900,
+    adress: {
+        country: 'Belarus',
+        street: 'Vitebskaya',
+        house: 49,
+        flat: 12
+    },
+};
 
-//     console.log(`name: ${employee.name} ${employee.surname}
-//         salary: ${employee.salary}$
-//         address: ${employee.adress}`)
+// Type Guard:
+function isItEmployee (object: ItEmployee | IEmployee): object is ItEmployee {
+    return 'projectNames' in object
+};
 
-//     if (isItEmployee(employee)) {
-//         console.log(`occupation: ${employee.occupation}, ${employee.grade}
-//         projects: ${employee.projectNames.join(', ')}
-//         address: ${employee.adress}`);
-//     }
-// };
 
-// printEmployeeInfo(employee_1);
-// printEmployeeInfo(employee_2);
+function printEmployeeInfo(employee: ItEmployee | IEmployee) {
+
+    console.log(`name: ${employee.name} ${employee.surname}
+        salary: ${employee.salary}$
+        address: ${employee.adress}`)
+
+    if (isItEmployee(employee)) {
+        console.log(`occupation: ${employee.occupation}, ${employee.grade}
+        projects: ${employee.projectNames.join(', ')}
+        address: ${employee.adress}`);
+    }
+};
+
+printEmployeeInfo(employee_1);
+printEmployeeInfo(employee_2);
 
 
 
@@ -105,15 +105,15 @@ export{}
 //     Параметры функции: Массив чисел и Анонимная функция, принимающая на вход число и возвращающая логическое значение.
 
 
-// const array = [1, -5, 2, 3, 4, 133, 68];
+const array = [1, -5, 2, 3, 4, 133, 68];
 
-// type ForCallback = (n: number) => boolean;
-// type ForArrayOfNumbers = number[];
+type ForCallback = (n: number) => boolean;
+type ForArrayOfNumbers = number[];
 
-// function forFilter (arrayOfNumbers: typeForArrayOfNumbers, callback: typeForCallback) {
-//     return arrayOfNumbers.filter(callback);
-// };
+function forFilter (arrayOfNumbers: typeForArrayOfNumbers, callback: typeForCallback) {
+    return arrayOfNumbers.filter(callback);
+};
 
-// console.log(forFilter(array, (n) => n > 3));
-// console.log(forfilter(array, (n) => n % 2 == 0));
+console.log(forFilter(array, (n) => n > 3));
+console.log(forfilter(array, (n) => n % 2 == 0));
 
